@@ -1,0 +1,29 @@
+//
+// Prefix header for all source files of the 'FootballTopApp' target in the 'FootballTopApp' project
+//
+
+#import <Availability.h>
+
+#ifndef __IPHONE_4_0
+#warning "This project uses features only available in iOS SDK 4.0 and later."
+#endif
+
+#ifdef __OBJC__
+    #import <UIKit/UIKit.h>
+    #import <Foundation/Foundation.h>
+    #import "AppHelper.h"
+#endif
+
+#include "Tools.h"
+
+#define SERVER_URL @"http://www.footballtop.ru/service/"
+#define NEWS_RSS   @"http://footballtop.ru/news/rss"
+//#define SERVER_URL @"http://admin:footballadmin13@dev.ft.y-itech.by/service/"
+
+#define PASSWORD @"Password"
+#define USER @"User"
+#define USER_ID @"UserID"
+
+#define LIMIT_ITEMS_ON_PAGE 10
+
+#define SAVE_USER @"SaveUser"

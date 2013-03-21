@@ -1,0 +1,15 @@
+/* 
+  General-Localizable.strings
+  IPhoneSpeedTracker
+
+  Created by destman on 4/15/11.
+  Copyright 2011 __MyCompanyName__. All rights reserved.
+*/
+
+"_Loc_Ok"		= "OK";
+"_Loc_Yes"		= "Ja";
+"_Loc_Cancel"   = "Abbrechen";
+
+"_Loc_AppName_Tmpl"         = "%appname%";
+"_Loc_AppVersion_Tmpl"      = "%appversion%";
+"_Loc_WarningNoInternet"	= "Warnung. Kein Internetanschluß.";
