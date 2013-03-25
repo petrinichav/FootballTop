@@ -80,33 +80,29 @@
             }
         }
         
-        NSDictionary *favourites = [self.info objectForKey:@"favourites"];
-        for (NSString *favKey in favourites)
+        NSArray *favourites = [self.info objectForKey:@"favourites"];
+        for (NSDictionary *favDict in favourites)
         {
-            NSDictionary *favItem = [favourites objectForKey:favKey];
-            if (favItem)
+            NSString *favType = [favDict objectForKey:@"type"];
+            FTItem *item = nil;
+            if ([favType isEqualToString:CLUB])
             {
-                FTItem *item = nil;
-                if ([favKey isEqualToString:CLUB])
-                {
-                    item = [FTItem createItemWithType:ItemClub info:favItem];
-                }
-                else if ([favKey isEqualToString:TEAM])
-                {
-                    item = [FTItem createItemWithType:ItemTeam info:favItem];
-                }
-                else if ([favKey isEqualToString:COACH])
-                {
-                    item = [FTItem createItemWithType:ItemCoach info:favItem];
-                }
-                else if ([favKey isEqualToString:PLAYER])
-                {
-                    item = [FTItem createItemWithType:ItemPlayer info:favItem];
-                }
-                if (item!= nil)
-                    [self.favouritesItems addObject:item];
-
+                item = [FTItem createItemWithType:ItemClub info:favDict];
             }
+            else if ([favType isEqualToString:TEAM])
+            {
+                item = [FTItem createItemWithType:ItemTeam info:favDict];
+            }
+            else if ([favType isEqualToString:COACH])
+            {
+                item = [FTItem createItemWithType:ItemCoach info:favDict];
+            }
+            else if ([favType isEqualToString:PLAYER])
+            {
+                item = [FTItem createItemWithType:ItemPlayer info:favDict];
+            }
+            if (item!= nil)
+                [self.favouritesItems addObject:item];
         }
         self.avatar = [self.info objectForKey:@"avatar"];
     }

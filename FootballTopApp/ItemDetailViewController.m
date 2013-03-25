@@ -453,8 +453,7 @@
                                                                                  {
                                                                                      NSArray *response = [(NetworkTaskGenerator *)item objectFromString];
                                                                                      dbgLog(@"votes = %@", response);
-                                                                                     LabelInViewWithID(scrollView, ID_LBL_VOTES).text = [NSString stringWithFormat:@"%d",
-                                                                                                                                         [[response objectAtIndex:0] intValue]];
+                                                                                     LabelInViewWithID(scrollView, ID_LBL_VOTES).text = [AppHelper stringValueForNumber:[[response objectAtIndex:0] intValue]];
                                                                                      LabelInViewWithID(scrollView, ID_LBL_ADD_VOTE).text = Loc(@"_Loc_Vote_Is_Successful");
                                                                                      ((UIButton *)sender).alpha = 0;
                                                                                      self.ftObject.votes = [[response objectAtIndex:0] intValue];

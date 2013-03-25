@@ -80,7 +80,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA</b
 							<double key="NS.time">375789874.16610402</double>
 						</object>
 						<object class="NSDate" key="IBUIMinimumDate">
-							<double key="NS.time">-3155713200</double>
+							<double key="NS.time">-3187249200</double>
 						</object>
 						<object class="NSDate" key="IBUIMaximumDate">
 							<double key="NS.time">1164884400</double>
@@ -175,30 +175,6 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA</b
 				<object class="IBPartialClassDescription">
 					<string key="className">DataPickerView</string>
 					<string key="superclassName">UIView</string>
-					<dictionary class="NSMutableDictionary" key="actions">
-						<string key="date:">id</string>
-						<string key="done:">id</string>
-						<string key="nextElement:">id</string>
-						<string key="previosElement:">id</string>
-					</dictionary>
-					<dictionary class="NSMutableDictionary" key="actionInfosByName">
-						<object class="IBActionInfo" key="date:">
-							<string key="name">date:</string>
-							<string key="candidateClassName">id</string>
-						</object>
-						<object class="IBActionInfo" key="done:">
-							<string key="name">done:</string>
-							<string key="candidateClassName">id</string>
-						</object>
-						<object class="IBActionInfo" key="nextElement:">
-							<string key="name">nextElement:</string>
-							<string key="candidateClassName">id</string>
-						</object>
-						<object class="IBActionInfo" key="previosElement:">
-							<string key="name">previosElement:</string>
-							<string key="candidateClassName">id</string>
-						</object>
-					</dictionary>
 					<object class="IBClassDescriptionSource" key="sourceIdentifier">
 						<string key="majorKey">IBProjectSource</string>
 						<string key="minorKey">./Classes/DataPickerView.h</string>

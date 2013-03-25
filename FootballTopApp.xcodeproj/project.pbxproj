@@ -1954,6 +1954,7 @@
 				GCC_VERSION = "";
 				HEADER_SEARCH_PATHS = "";
 				INFOPLIST_FILE = "FootballTopApp/FootballTopApp-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/FootballTopApp/CorePlot\"",
@@ -1972,14 +1973,15 @@
 		635AD5BE15EE16C600CD14A2 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Mikhail Matusevich";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Mikhail Matusevich";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Mike Matusevich (Z8YHW5UBJ6)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Mike Matusevich (Z8YHW5UBJ6)";
 				FRAMEWORK_SEARCH_PATHS = "";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "FootballTopApp/FootballTopApp-Prefix.pch";
 				GCC_VERSION = "";
 				HEADER_SEARCH_PATHS = "";
 				INFOPLIST_FILE = "FootballTopApp/FootballTopApp-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/FootballTopApp/CorePlot\"",
@@ -1989,8 +1991,8 @@
 					"-all_load",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "9DF60D2E-B189-4CC2-8F1C-A245D91280C7";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "9DF60D2E-B189-4CC2-8F1C-A245D91280C7";
+				PROVISIONING_PROFILE = "EFF79FFF-6DA6-4E3D-9368-440DB9A70564";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "EFF79FFF-6DA6-4E3D-9368-440DB9A70564";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
