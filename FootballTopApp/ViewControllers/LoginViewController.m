@@ -7,8 +7,8 @@
 //
 
 #import "LoginViewController.h"
-#import "Network/NetworkTaskGenerator.h"
-#import "libs/GeneralTools/DataSource.h"
+#import "NetworkTaskGenerator.h"
+#import "DataSource.h"
 #import "UnderlinedButton.h"
 #import "ForgotPasswordViewController.h"
 #import "AppDelegate.h"
@@ -74,16 +74,7 @@
     
     [Localization localizeView:self.view];
     [Localization localizeView:self.scrollView];
-    
-//    UnderlinedButton *regBtn = [AppHelper createUnderlinedButtonWithText:Loc(@"_Loc_RequestRegist") fromView:self.view
-//                                                                    point:CGPointMake(95, 350) target:(id)self selector:@selector(registration:)];
-//    regBtn.titleEdgeInsets = UIEdgeInsetsMake(0, -15, 0, 0);
-//    
-//    UnderlinedButton *guestBtn = [AppHelper createUnderlinedButtonWithText:Loc(@"_Loc_RequestGuest") fromView:self.view
-//                                                                   point:CGPointMake(108, 385) target:(id)self selector:@selector(goHowGuest:)];
-//    guestBtn.titleEdgeInsets = UIEdgeInsetsMake(0, -15, 0, 0);
 
-	// Do any additional setup after loading the view, typically from a nib.
 }
 
 - (void) viewDidAppear:(BOOL)animated
