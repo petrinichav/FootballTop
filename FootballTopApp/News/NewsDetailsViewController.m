@@ -35,8 +35,6 @@
     _bgScrollView = nil;
     [_commentsBtn release];
     _commentsBtn = nil;
-    [_addCommentBtn release];
-    _addCommentBtn = nil;
     [_newsImage release];
     _newsImage = nil;
     
@@ -144,11 +142,7 @@
     }
     
     currentNews = news;
-//    
-//    UIWebView *wevV = [[UIWebView alloc] initWithFrame:self.view.bounds];
-//    [wevV loadHTMLString:Loc(@"_Loc_HTML") baseURL:nil];
-//    wevV.dataDetectorTypes = UIDataDetectorTypeAll ;
-//    [self.view addSubview:wevV];
+
 }
 
 #pragma mark UIWebViewDelegate
@@ -173,14 +167,6 @@
         [[UIApplication sharedApplication]openURL:[request URL]];
         return NO;
     }
-}
-
-#pragma mark - CommetsViewDelegate
-
-- (void) hideCommentsView
-{
-    self.addCommentBtn.alpha = 0;
-    self.commentsBtn.alpha   = 1;
 }
 
 @end

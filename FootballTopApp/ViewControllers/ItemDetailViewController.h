@@ -12,29 +12,25 @@
 
 @interface ItemDetailViewController : UIViewController
 {
-    IBOutlet UIWebView              *description;
-    IBOutlet UILabel                *titleLbl;
-    IBOutlet UIImageView            *imageItem;
-    IBOutlet UIScrollView           *scrollView;
     
-    float contentHeight, commentHeight;
     
-    CGFloat lastOffset;
+    float contentHeight;
     
-    CommentsView      *commentsView;
+    CGFloat lastOffset;    
 }
 
+@property (nonatomic, retain) IBOutlet UIWebView    *description;
+@property (nonatomic, retain) IBOutlet UILabel      *titleLbl;
+@property (nonatomic, retain) IBOutlet UIImageView  *imageItem;
+@property (nonatomic, retain) IBOutlet UIScrollView *scrollView;
 @property (nonatomic, retain) IBOutlet UIButton     *commentsBtn;
 @property (nonatomic, retain) IBOutlet UIButton     *addToFavBtn;
-@property (nonatomic, retain) IBOutlet UIView       *addCommentField;
-@property (nonatomic, retain) IBOutlet UITextView   *commentField;
 @property (nonatomic, retain) IBOutlet UILabel      *infoTitleLbl;
+
 
 - (void) setItem:(FTItem *)item;
 
 - (IBAction) back:(UIButton *)sender;
-- (IBAction) postComment:(id)sender;
-- (IBAction) addComment:(id)sender;
 - (IBAction) openComments:(id)sender;
 
 @end

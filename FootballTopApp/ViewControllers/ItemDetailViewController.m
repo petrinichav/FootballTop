@@ -18,8 +18,6 @@
 
 #import "NetworkTaskGenerator.h"
 #import "DataSource.h"
-#import "CommentsView.h"
-#import "CommentsView.h"
 #import "AppDelegate.h"
 
 #import "AlertModule.h"
@@ -37,7 +35,7 @@
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
-    self = [super initWithNibName:[Tools xibForRetina4_inch:@"ItemDetailViewController"] bundle:nibBundleOrNil];
+    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
     }
@@ -48,8 +46,7 @@
 {
     [super viewDidLoad];
     [Localization localizeView:self.view];
-    [Localization localizeView:scrollView];
-    commentHeight = 0.f;
+    [Localization localizeView:self.scrollView];
     // Do any additional setup after loading the view from its nib.
 }
 
@@ -57,10 +54,6 @@
 {
     [super viewWillAppear:animated];
     [[NSNotificationCenter defaultCenter] removeObserver:self];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateContentSize:) name:@"UpdateContentSize" object:nil];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillShow:) name:UIKeyboardWillShowNotification object:nil];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillHide:) name:UIKeyboardWillHideNotification object:nil];
-    //[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateRefreshManager:) name:@"UpdateRefreshManager" object:nil];
 }
 
 - (void) viewWillDisappear:(BOOL)animated
@@ -72,22 +65,18 @@
 
 - (void) releaseOutlets
 {
-    [description release];
-    description = nil;
-    [titleLbl release];
-    titleLbl = nil;
-    [imageItem release];
-    imageItem = nil;
-    [scrollView release];
-    scrollView = nil;
-    [_commentField release];
-    _commentField = nil;
+    [_description release];
+    _description = nil;
+    [_titleLbl release];
+    _titleLbl = nil;
+    [_imageItem release];
+    _imageItem = nil;
+    [_scrollView release];
+    _scrollView = nil;
     [_commentsBtn release];
     _commentsBtn = nil;
     [_addToFavBtn release];
     _addToFavBtn = nil;
-    [_addCommentField release];
-    _addCommentField = nil;
     [_infoTitleLbl release];
     _infoTitleLbl = nil;
 }
@@ -106,61 +95,15 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (void) keyboardWillShow:(NSNotification *)notif
-{
-    CGRect keyboardFrame = [[notif.userInfo valueForKey:UIKeyboardFrameEndUserInfoKey] CGRectValue];
-    CGFloat keyboardHeight = keyboardFrame.size.width;
-    
-    UIViewAnimationCurve animationCurve = [[notif.userInfo valueForKey:UIKeyboardAnimationCurveUserInfoKey] intValue];
-    CGFloat duration = [[notif.userInfo valueForKey:UIKeyboardAnimationDurationUserInfoKey] floatValue];
-    
-    if (duration == 0.f)
-        duration = 0.25f;
-    
-    [UIView animateWithDuration:duration delay:0
-                        options:(UIViewAnimationOptions)animationCurve
-                     animations:^{
-                         [self textEnterFieldFrameForKeyboardHeight:keyboardHeight];
-                     } completion:^(BOOL finished) {
-                         
-                     }];
-}
-
-- (void) keyboardWillHide:(NSNotification *)notif
-{
-    UIViewAnimationCurve animationCurve = [[notif.userInfo valueForKey:UIKeyboardAnimationCurveUserInfoKey] intValue];
-    CGFloat duration = [[notif.userInfo valueForKey:UIKeyboardAnimationDurationUserInfoKey] floatValue];
-    
-    if (duration == 0.f)
-        duration = 0.25f;
-    
-    [UIView animateWithDuration:duration delay:0
-                        options:(UIViewAnimationOptions)animationCurve
-                     animations:^{
-                         [self textEnterFieldFrameForKeyboardHeight:0];
-                     } completion:^(BOOL finished) {
-                         
-                     }];
-}
-
-- (void) textEnterFieldFrameForKeyboardHeight:(CGFloat) height
-{
-    CGRect rect =  self.addCommentField.frame;
-    rect.origin.y = [UIScreen mainScreen].bounds.size.height - height + rect.size.height;
-    self.addCommentField.frame = rect;
-}
-
-
-- (void) updateContentSize:(NSNotification *) notif
-{
-   
-}
+#pragma mark - Notifications
 
 - (void) increaseComments:(NSNotification *) notif
 {
     self.ftObject.comments ++;
     [self.commentsBtn setTitle:[NSString stringWithFormat:@" %d", self.ftObject.comments] forState:UIControlStateNormal];
 }
+
+#pragma mark - Controller Logic
 
 - (void) getVotesForObject:(FTItem *)obj
 {
@@ -177,42 +120,42 @@
 
 - (void) moveContentToTopAndRigth:(float) offsetToRight
 {
-    if (LabelInViewWithID(scrollView, ID_LBL_TITLE_BDATE).alpha == 0)
+    if (LabelInViewWithID(self.scrollView, ID_LBL_TITLE_BDATE).alpha == 0)
     {
-        CGRect countryLblRect = LabelInViewWithID(scrollView, ID_LBL_TITLE_COUNTRY).frame;
-        CGRect countryNameRect = LabelInViewWithID(scrollView, ID_LBL_COUTRY).frame;
-        CGRect bDatelblRect   = LabelInViewWithID(scrollView, ID_LBL_TITLE_BDATE).frame;
+        CGRect countryLblRect = LabelInViewWithID(self.scrollView, ID_LBL_TITLE_COUNTRY).frame;
+        CGRect countryNameRect = LabelInViewWithID(self.scrollView, ID_LBL_COUTRY).frame;
+        CGRect bDatelblRect   = LabelInViewWithID(self.scrollView, ID_LBL_TITLE_BDATE).frame;
         countryLblRect.origin.y = bDatelblRect.origin.y;
         countryNameRect.origin.y = bDatelblRect.origin.y;
         if (offsetToRight == 0)
             countryNameRect.origin.x = countryLblRect.origin.x;
         else
             countryNameRect.origin.x -= offsetToRight;
-        LabelInViewWithID(scrollView, ID_LBL_TITLE_COUNTRY).frame = countryLblRect;
-        LabelInViewWithID(scrollView, ID_LBL_COUTRY).frame = countryNameRect;
+        LabelInViewWithID(self.scrollView, ID_LBL_TITLE_COUNTRY).frame = countryLblRect;
+        LabelInViewWithID(self.scrollView, ID_LBL_COUTRY).frame = countryNameRect;
     }
 }
 
 - (void) setInfoLabelForItem:(FTItem *)item
 {
-    LabelInViewWithID(scrollView, ID_LBL_TITLE_BDATE).alpha = 0;
-    LabelInViewWithID(scrollView, ID_LBL_TITLE_COUNTRY).alpha = 0;
+    LabelInViewWithID(self.scrollView, ID_LBL_TITLE_BDATE).alpha = 0;
+    LabelInViewWithID(self.scrollView, ID_LBL_TITLE_COUNTRY).alpha = 0;
 
     switch (item.itemType) {
         case ItemCoach:
         {
             NSString *place = [((Coach *)item) place];
-            LabelInViewWithID(scrollView, ID_LBL_COUTRY).text = place;
+            LabelInViewWithID(self.scrollView, ID_LBL_COUTRY).text = place;
             if (![place isEqualToString:Loc(@"_Loc_Free_Agent")])
             {
-                LabelInViewWithID(scrollView, ID_LBL_TITLE_COUNTRY).text = Loc(@"_Loc_ClubOrTeam");
-                LabelInViewWithID(scrollView, ID_LBL_TITLE_COUNTRY).alpha = 1;
-                double offset = [LabelInViewWithID(scrollView, ID_LBL_TITLE_COUNTRY).text  length]*(-2.f);
+                LabelInViewWithID(self.scrollView, ID_LBL_TITLE_COUNTRY).text = Loc(@"_Loc_ClubOrTeam");
+                LabelInViewWithID(self.scrollView, ID_LBL_TITLE_COUNTRY).alpha = 1;
+                double offset = [LabelInViewWithID(self.scrollView, ID_LBL_TITLE_COUNTRY).text  length]*(-2.f);
                 [self moveContentToTopAndRigth:offset];
             }
             else
             {
-                LabelInViewWithID(scrollView, ID_LBL_TITLE_COUNTRY).alpha = 0;
+                LabelInViewWithID(self.scrollView, ID_LBL_TITLE_COUNTRY).alpha = 0;
                 double offset = 0;
                 [self moveContentToTopAndRigth:offset];
                 
@@ -224,11 +167,11 @@
             break;
         case ItemClub:
         {
-            LabelInViewWithID(scrollView, ID_LBL_COUTRY).text = [((Club *)item) championship];
-            LabelInViewWithID(scrollView, ID_LBL_TITLE_COUNTRY).text = Loc(@"_Loc_Liga");
-            LabelInViewWithID(scrollView, ID_LBL_TITLE_COUNTRY).alpha = 1;
+            LabelInViewWithID(self.scrollView, ID_LBL_COUTRY).text = [((Club *)item) championship];
+            LabelInViewWithID(self.scrollView, ID_LBL_TITLE_COUNTRY).text = Loc(@"_Loc_Liga");
+            LabelInViewWithID(self.scrollView, ID_LBL_TITLE_COUNTRY).alpha = 1;
             self.infoTitleLbl.text = Loc(@"_Loc_AboutFTObject2");
-            [self moveContentToTopAndRigth:[LabelInViewWithID(scrollView, ID_LBL_TITLE_COUNTRY).text  length]*3.f];
+            [self moveContentToTopAndRigth:[LabelInViewWithID(self.scrollView, ID_LBL_TITLE_COUNTRY).text  length]*3.f];
         }
             break;
         case ItemChempionship:
@@ -241,17 +184,17 @@
             NSString *bDate = [((Player *)item) bDate];
             if ([bDate length] > 0)
             {
-                LabelInViewWithID(scrollView, ID_LBL_TITLE_BDATE).alpha = 1;
-                LabelInViewWithID(scrollView, ID_LBL_DATE).text   = bDate;
+                LabelInViewWithID(self.scrollView, ID_LBL_TITLE_BDATE).alpha = 1;
+                LabelInViewWithID(self.scrollView, ID_LBL_DATE).text   = bDate;
             }
             else
             {
-                LabelInViewWithID(scrollView, ID_LBL_TITLE_BDATE).alpha = 0;
-                LabelInViewWithID(scrollView, ID_LBL_DATE).alpha = 0;
-                [self moveContentToTopAndRigth:[LabelInViewWithID(scrollView, ID_LBL_TITLE_COUNTRY).text  length]*0.5f];
+                LabelInViewWithID(self.scrollView, ID_LBL_TITLE_BDATE).alpha = 0;
+                LabelInViewWithID(self.scrollView, ID_LBL_DATE).alpha = 0;
+                [self moveContentToTopAndRigth:[LabelInViewWithID(self.scrollView, ID_LBL_TITLE_COUNTRY).text  length]*0.5f];
             }
-            LabelInViewWithID(scrollView, ID_LBL_TITLE_COUNTRY).alpha = 1;
-            LabelInViewWithID(scrollView, ID_LBL_COUTRY).text = [((Player *)item) country];
+            LabelInViewWithID(self.scrollView, ID_LBL_TITLE_COUNTRY).alpha = 1;
+            LabelInViewWithID(self.scrollView, ID_LBL_COUTRY).text = [((Player *)item) country];
             
             self.infoTitleLbl.text = Loc(@"_Loc_AboutFTObject1");
         }
@@ -279,24 +222,24 @@
     [self createPlot];
     
     CGRect infoRect = self.infoTitleLbl.frame;
-    infoRect.origin.y = scrollView.contentSize.height;
+    infoRect.origin.y = self.scrollView.contentSize.height;
     self.infoTitleLbl.frame = infoRect;
     
     UIImageView *lineImgView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"profile_tbl_header_line.png"]];
     lineImgView.frame = CGRectMake(0, infoRect.origin.y + infoRect.size.height, 320, 1);
-    [scrollView addSubview:lineImgView];
+    [self.scrollView addSubview:lineImgView];
     
-    CGRect descriptionFrame = description.frame;
+    CGRect descriptionFrame = self.description.frame;
     descriptionFrame.origin.y = lineImgView.frame.origin.y+lineImgView.frame.size.height;
-    description.frame = descriptionFrame;
-    contentHeight = description.frame.origin.y;
-    [description loadHTMLString:obj.value baseURL:nil];
+    self.description.frame = descriptionFrame;
+    contentHeight = self.description.frame.origin.y;
+    [self.description loadHTMLString:obj.value baseURL:nil];
     
     [lineImgView release];
     
-    titleLbl.text = obj.title;
-    LabelInViewWithID(scrollView, ID_LBL_CREATOR).text = obj.title;
-    LabelInViewWithID(scrollView, ID_LBL_VOTES).text = [AppHelper stringValueForNumber:obj.votes];
+    self.titleLbl.text = obj.title;
+    LabelInViewWithID(self.scrollView, ID_LBL_CREATOR).text = obj.title;
+    LabelInViewWithID(self.scrollView, ID_LBL_VOTES).text = [AppHelper stringValueForNumber:obj.votes];
     [self setInfoLabelForItem:obj];
     
     [self getVotesForObject:obj];
@@ -312,7 +255,7 @@
             __block UIImage *image =  [[DataSource source] cashedImageWithoutRequestForURL:[NSURL URLWithString:obj.imageURL]];
             
             dispatch_async(dispatch_get_main_queue(), ^{
-                imageItem.image = image;
+                self.imageItem.image = image;
             });
             
         });
@@ -378,15 +321,11 @@
 
 - (void) createPlot
 {
-    CGRect rect = CGRectMake(10, imageItem.frame.origin.y + imageItem.frame.size.height + 30, 300, 250);
+    CGRect rect = CGRectMake(10, self.imageItem.frame.origin.y + self.imageItem.frame.size.height + 30, 300, 250);
     FTPlotView *plot = [[[FTPlotView alloc] initWithFrame:rect] autorelease];
 
-    [scrollView addSubview:plot];
-    [scrollView setContentSize:CGSizeMake([UIScreen mainScreen].bounds.size.width, CGRectGetMaxY(plot.frame))];
-    
-//    NSDictionary *response = @{@"date":@"25 \u0434\u0435\u043a\u0430\u0431\u0440\u044f 2012 - 4 \u044f\u043d\u0432\u0430\u0440\u044f 2013",@"timeline":@[@"25",@"26",@"27"],@"coordinates":@{@"positions":@[@{@"value":@"1",@"class":@"mid"}],@"coords":@[@{@"x":@0,@"y":@77.5},@{@"x":@29,@"y":@77.5},@{@"x":@58,@"y":@77.5}]}};
-
-  //  [LoadingView showInView:plot];
+    [self.scrollView addSubview:plot];
+    [self.scrollView setContentSize:CGSizeMake([UIScreen mainScreen].bounds.size.width, CGRectGetMaxY(plot.frame))];
     
     DispatchTask *plotTask = [NetworkTaskGenerator generateTaskForGetPlotDataForObject:self.ftObject.nID completeBlock:^(DispatchTask *item) {
         if (((NetworkTaskGenerator *)item).isSuccessful)
@@ -453,8 +392,8 @@
                                                                                  {
                                                                                      NSArray *response = [(NetworkTaskGenerator *)item objectFromString];
                                                                                      dbgLog(@"votes = %@", response);
-                                                                                     LabelInViewWithID(scrollView, ID_LBL_VOTES).text = [AppHelper stringValueForNumber:[[response objectAtIndex:0] intValue]];
-                                                                                     LabelInViewWithID(scrollView, ID_LBL_ADD_VOTE).text = Loc(@"_Loc_Vote_Is_Successful");
+                                                                                     LabelInViewWithID(self.scrollView, ID_LBL_VOTES).text = [AppHelper stringValueForNumber:[[response objectAtIndex:0] intValue]];
+                                                                                     LabelInViewWithID(self.scrollView, ID_LBL_ADD_VOTE).text = Loc(@"_Loc_Vote_Is_Successful");
                                                                                      ((UIButton *)sender).alpha = 0;
                                                                                      self.ftObject.votes = [[response objectAtIndex:0] intValue];
                                                                                  }
@@ -474,12 +413,6 @@
     }
 }
 
-- (IBAction) search:(id)sender
-{
-    AppDelegate *dlg = (AppDelegate *)[UIApplication sharedApplication].delegate;
-    [dlg showSearchControllerInNavController:self.navigationController];
-}
-
 - (IBAction) openComments:(id)sender
 {
     CommentsViewController *vc = [[CommentsViewController alloc] initWithNibName:@"CommentsViewController" bundle:[NSBundle mainBundle]];
@@ -495,41 +428,13 @@
 
 }
 
-- (IBAction) addComment:(id)sender
-{
-    [commentsView hide];
-    [self.commentField becomeFirstResponder];
-}
-
-- (IBAction) postComment:(id)sender
-{
-   // [LoadingView showInView:self.view];
-    NetworkTaskGenerator *task = [NetworkTaskGenerator generateTaskForAddCommentForNodeId:self.ftObject.nID comment:self.commentField.text completeBlock:^(DispatchTask *item) {
-        if (((NetworkTaskGenerator *)item).isSuccessful)
-        {
-            [self.commentField resignFirstResponder];
-            [self addComments];
-        }
-      //  [LoadingView hide];
-    }];
-    
-    [[DispatchTools Instance] addTask:task];
-}
-
-
-- (void) addComments
-{
-    
-}
-
-
 #pragma mark WebView Delegate
 
 - (void)webViewDidFinishLoad:(UIWebView *)aWebView {
     
     [aWebView sizeToFit];
     contentHeight += aWebView.frame.size.height;
-	[scrollView setContentSize:CGSizeMake([UIScreen mainScreen].bounds.size.width, contentHeight)];
+	[self.scrollView setContentSize:CGSizeMake([UIScreen mainScreen].bounds.size.width, contentHeight)];
        
 }
 
@@ -545,10 +450,4 @@
     }
 }
 
-#pragma mark - CommetsViewDelegate
-
-- (void) hideCommentsView
-{
-    self.commentsBtn.alpha   = 1;
-}
 @end

@@ -20,7 +20,6 @@
 @property (nonatomic, retain) IBOutlet UIScrollView *bgScrollView;
 @property (nonatomic, retain) IBOutlet UIWebView    *contentWebView;
 @property (nonatomic, retain) IBOutlet UIButton     *commentsBtn;
-@property (nonatomic, retain) IBOutlet UIButton     *addCommentBtn;
 @property (nonatomic, retain) IBOutlet UIImageView  *newsImage;
 
 - (void) setNews:(News *) news;

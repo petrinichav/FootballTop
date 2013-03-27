@@ -23,7 +23,7 @@
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
-    self = [super initWithNibName:[Tools xibForRetina4_inch:@"ProfileViewController"] bundle:nibBundleOrNil];
+    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         self.tabBarItem.title = Loc(@"_Loc_Profile" );
         [self.tabBarItem setFinishedSelectedImage:[Tools hiresImageNamed:@"btn_prof_s.png"] withFinishedUnselectedImage:[Tools hiresImageNamed:@"btn_prof.png"]];        

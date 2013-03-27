@@ -11,14 +11,12 @@
 		04A119C61701C89700E0D0E0 /* DefaultViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04A119A71701C89700E0D0E0 /* DefaultViewController.xib */; };
 		04A119C71701C89700E0D0E0 /* ForgotPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04A119A91701C89700E0D0E0 /* ForgotPasswordViewController.m */; };
 		04A119C81701C89700E0D0E0 /* ForgotPasswordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04A119AA1701C89700E0D0E0 /* ForgotPasswordViewController.xib */; };
-		04A119C91701C89700E0D0E0 /* ItemDetailViewController-568h@2x.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04A119AB1701C89700E0D0E0 /* ItemDetailViewController-568h@2x.xib */; };
 		04A119CA1701C89700E0D0E0 /* ItemDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04A119AD1701C89700E0D0E0 /* ItemDetailViewController.m */; };
 		04A119CB1701C89700E0D0E0 /* ItemDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04A119AE1701C89700E0D0E0 /* ItemDetailViewController.xib */; };
 		04A119CC1701C89700E0D0E0 /* ItemsListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04A119B01701C89700E0D0E0 /* ItemsListViewController.m */; };
 		04A119CD1701C89700E0D0E0 /* ItemsListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04A119B11701C89700E0D0E0 /* ItemsListViewController.xib */; };
 		04A119CE1701C89700E0D0E0 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04A119B31701C89700E0D0E0 /* LoginViewController.m */; };
 		04A119CF1701C89700E0D0E0 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04A119B41701C89700E0D0E0 /* LoginViewController.xib */; };
-		04A119D01701C89700E0D0E0 /* ProfileViewController-568h@2x.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04A119B51701C89700E0D0E0 /* ProfileViewController-568h@2x.xib */; };
 		04A119D11701C89700E0D0E0 /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04A119B71701C89700E0D0E0 /* ProfileViewController.m */; };
 		04A119D21701C89700E0D0E0 /* ProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04A119B81701C89700E0D0E0 /* ProfileViewController.xib */; };
 		04A119D31701C89700E0D0E0 /* RateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04A119BA1701C89700E0D0E0 /* RateViewController.m */; };
@@ -76,7 +74,6 @@
 		6319D7D615FE26E00026F49C /* TextFieldForAlert.m in Sources */ = {isa = PBXBuildFile; fileRef = 6319D7D215FE26E00026F49C /* TextFieldForAlert.m */; };
 		634336BA164295080074320C /* CommentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 634336AB164295080074320C /* CommentCell.m */; };
 		634336BB164295080074320C /* CommentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 634336AC164295080074320C /* CommentCell.xib */; };
-		634336BC164295080074320C /* CommentsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 634336AE164295080074320C /* CommentsView.m */; };
 		634336BE164295080074320C /* NewsCategoriesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 634336B1164295080074320C /* NewsCategoriesViewController.m */; };
 		634336BF164295080074320C /* NewsCategoriesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 634336B2164295080074320C /* NewsCategoriesViewController.xib */; };
 		634336C0164295080074320C /* NewsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 634336B4164295080074320C /* NewsCell.m */; };
@@ -92,7 +89,6 @@
 		635AD5AD15EE16C600CD14A2 /* Localization.strings in Resources */ = {isa = PBXBuildFile; fileRef = 635AD5AB15EE16C600CD14A2 /* Localization.strings */; };
 		635AD5AF15EE16C600CD14A2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 635AD5AE15EE16C600CD14A2 /* main.m */; };
 		635AD5B315EE16C600CD14A2 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 635AD5B215EE16C600CD14A2 /* AppDelegate.m */; };
-		637477B11681DF75004A0E0C /* CommentsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 634336AF164295080074320C /* CommentsView.xib */; };
 		63891292167F8E92000D04A4 /* CommentsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63891290167F8E91000D04A4 /* CommentsViewController.m */; };
 		63891293167F8E92000D04A4 /* CommentsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63891291167F8E91000D04A4 /* CommentsViewController.xib */; };
 		6395F3021610B76D005B93F3 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6395F3011610B76D005B93F3 /* Default-568h@2x.png */; };
@@ -309,7 +305,6 @@
 		04A119A81701C89700E0D0E0 /* ForgotPasswordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ForgotPasswordViewController.h; sourceTree = "<group>"; };
 		04A119A91701C89700E0D0E0 /* ForgotPasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ForgotPasswordViewController.m; sourceTree = "<group>"; };
 		04A119AA1701C89700E0D0E0 /* ForgotPasswordViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ForgotPasswordViewController.xib; sourceTree = "<group>"; };
-		04A119AB1701C89700E0D0E0 /* ItemDetailViewController-568h@2x.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "ItemDetailViewController-568h@2x.xib"; sourceTree = "<group>"; };
 		04A119AC1701C89700E0D0E0 /* ItemDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ItemDetailViewController.h; sourceTree = "<group>"; };
 		04A119AD1701C89700E0D0E0 /* ItemDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ItemDetailViewController.m; sourceTree = "<group>"; };
 		04A119AE1701C89700E0D0E0 /* ItemDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ItemDetailViewController.xib; sourceTree = "<group>"; };
@@ -319,7 +314,6 @@
 		04A119B21701C89700E0D0E0 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		04A119B31701C89700E0D0E0 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		04A119B41701C89700E0D0E0 /* LoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
-		04A119B51701C89700E0D0E0 /* ProfileViewController-568h@2x.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "ProfileViewController-568h@2x.xib"; sourceTree = "<group>"; };
 		04A119B61701C89700E0D0E0 /* ProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileViewController.h; sourceTree = "<group>"; };
 		04A119B71701C89700E0D0E0 /* ProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileViewController.m; sourceTree = "<group>"; };
 		04A119B81701C89700E0D0E0 /* ProfileViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProfileViewController.xib; sourceTree = "<group>"; };
@@ -486,9 +480,6 @@
 		634336AA164295080074320C /* CommentCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommentCell.h; sourceTree = "<group>"; };
 		634336AB164295080074320C /* CommentCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommentCell.m; sourceTree = "<group>"; };
 		634336AC164295080074320C /* CommentCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CommentCell.xib; sourceTree = "<group>"; };
-		634336AD164295080074320C /* CommentsView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommentsView.h; sourceTree = "<group>"; };
-		634336AE164295080074320C /* CommentsView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommentsView.m; sourceTree = "<group>"; };
-		634336AF164295080074320C /* CommentsView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CommentsView.xib; sourceTree = "<group>"; };
 		634336B0164295080074320C /* NewsCategoriesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsCategoriesViewController.h; sourceTree = "<group>"; };
 		634336B1164295080074320C /* NewsCategoriesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsCategoriesViewController.m; sourceTree = "<group>"; };
 		634336B2164295080074320C /* NewsCategoriesViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewsCategoriesViewController.xib; sourceTree = "<group>"; };
@@ -815,7 +806,6 @@
 				04A119A81701C89700E0D0E0 /* ForgotPasswordViewController.h */,
 				04A119A91701C89700E0D0E0 /* ForgotPasswordViewController.m */,
 				04A119AA1701C89700E0D0E0 /* ForgotPasswordViewController.xib */,
-				04A119AB1701C89700E0D0E0 /* ItemDetailViewController-568h@2x.xib */,
 				04A119AC1701C89700E0D0E0 /* ItemDetailViewController.h */,
 				04A119AD1701C89700E0D0E0 /* ItemDetailViewController.m */,
 				04A119AE1701C89700E0D0E0 /* ItemDetailViewController.xib */,
@@ -825,7 +815,6 @@
 				04A119B21701C89700E0D0E0 /* LoginViewController.h */,
 				04A119B31701C89700E0D0E0 /* LoginViewController.m */,
 				04A119B41701C89700E0D0E0 /* LoginViewController.xib */,
-				04A119B51701C89700E0D0E0 /* ProfileViewController-568h@2x.xib */,
 				04A119B61701C89700E0D0E0 /* ProfileViewController.h */,
 				04A119B71701C89700E0D0E0 /* ProfileViewController.m */,
 				04A119B81701C89700E0D0E0 /* ProfileViewController.xib */,
@@ -1098,9 +1087,6 @@
 				634336AA164295080074320C /* CommentCell.h */,
 				634336AB164295080074320C /* CommentCell.m */,
 				634336AC164295080074320C /* CommentCell.xib */,
-				634336AD164295080074320C /* CommentsView.h */,
-				634336AE164295080074320C /* CommentsView.m */,
-				634336AF164295080074320C /* CommentsView.xib */,
 				6389128F167F8E91000D04A4 /* CommentsViewController.h */,
 				63891290167F8E91000D04A4 /* CommentsViewController.m */,
 				63891291167F8E91000D04A4 /* CommentsViewController.xib */,
@@ -1581,7 +1567,6 @@
 				634336C4164295080074320C /* NewsTeaserCell.xib in Resources */,
 				63FA806F165B7600004932CF /* CategoryCell.xib in Resources */,
 				63891293167F8E92000D04A4 /* CommentsViewController.xib in Resources */,
-				637477B11681DF75004A0E0C /* CommentsView.xib in Resources */,
 				63A9AC3E168C68140000CD97 /* CategoryView.xib in Resources */,
 				63AFC9B816AEF73300644ED9 /* CategoryView-568h@2x.xib in Resources */,
 				F4A6834116DBBF7700A720FA /* forgot_pass_field.png in Resources */,
@@ -1725,11 +1710,9 @@
 				F4A683CC16DBBF7700A720FA /* default_image@2x.png in Resources */,
 				04A119C61701C89700E0D0E0 /* DefaultViewController.xib in Resources */,
 				04A119C81701C89700E0D0E0 /* ForgotPasswordViewController.xib in Resources */,
-				04A119C91701C89700E0D0E0 /* ItemDetailViewController-568h@2x.xib in Resources */,
 				04A119CB1701C89700E0D0E0 /* ItemDetailViewController.xib in Resources */,
 				04A119CD1701C89700E0D0E0 /* ItemsListViewController.xib in Resources */,
 				04A119CF1701C89700E0D0E0 /* LoginViewController.xib in Resources */,
-				04A119D01701C89700E0D0E0 /* ProfileViewController-568h@2x.xib in Resources */,
 				04A119D21701C89700E0D0E0 /* ProfileViewController.xib in Resources */,
 				04A119D41701C89700E0D0E0 /* RateViewController.xib in Resources */,
 				04A119D61701C89700E0D0E0 /* RegistrationViewController.xib in Resources */,
@@ -1825,7 +1808,6 @@
 				63AFA24C1611B0B100831B43 /* News.m in Sources */,
 				6349FF0516354BFC0059CF50 /* NewsCategorie.m in Sources */,
 				634336BA164295080074320C /* CommentCell.m in Sources */,
-				634336BC164295080074320C /* CommentsView.m in Sources */,
 				634336BE164295080074320C /* NewsCategoriesViewController.m in Sources */,
 				634336C0164295080074320C /* NewsCell.m in Sources */,
 				634336C1164295080074320C /* NewsDetailsViewController.m in Sources */,
